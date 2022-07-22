@@ -1,15 +1,24 @@
+import { lazy } from 'react';
 import { LazyExoticComponent } from 'react';
 // import { RouteList } from './common/enums/routes.enum';
 
+export enum RouteList {
+  HOME,
+}
+
 export interface Route {
-  path: string; //RouteList;
+  path: string;
   element: LazyExoticComponent<any>;
   exact?: boolean;
   name: string;
   isPrivate?: boolean;
 }
 
-// const Dashboard = lazy(() => import('./pages/Dashboard'));
+export type Routes = {
+  [key in RouteList]: Route;
+};
+
+const Home = lazy(() => import('./pages/Home'));
 // const Login = lazy(() => import('./pages/Login'));
 // const ProductList = lazy(() => import('./pages/products/ProductList'));
 // const ProductCreate = lazy(() => import('./pages/products/ProductCreate'));
@@ -20,9 +29,9 @@ export interface Route {
 // const Shops = lazy(() => import('./pages/shops/Shops'));
 // const ShopAddresses = lazy(() => import('./pages/shop-addresses/ShopAddresses'));
 
-const routes: Route[] = [
+const routes: Routes = {
   // { path: RouteList.LOGIN, name: 'Login', element: Login },
-  // { path: RouteList.DASHBOARD, name: 'Dashboard', element: Dashboard },
+  [RouteList.HOME]: { path: '/', name: 'Home', element: Home },
   // //Products
   // { path: RouteList.PRODUCTS, name: 'Products', element: ProductList },
   // { path: RouteList.PRODUCT_CREATE, name: 'Create product', element: ProductCreate },
@@ -35,6 +44,6 @@ const routes: Route[] = [
   // { path: RouteList.SHOPS, name: 'Shops', element: Shops },
   // //Shop addresses
   // { path: RouteList.SHOP_ADDRESSES, name: 'Shop addresses', element: ShopAddresses },
-];
+};
 
 export default routes;

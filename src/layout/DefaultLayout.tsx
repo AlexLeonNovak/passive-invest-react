@@ -5,7 +5,7 @@ import AppFooter from './AppFooter';
 
 const DefaultLayout = () => {
   return (
-    <div className="wrapper flex flex-column min-h-screen bg-gray-100">
+    <div className="wrapper flex flex-column min-h-screen">
       <AppHeader />
       <div className="body flex-grow-1">
         <div className="container-fluid">

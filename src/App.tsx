@@ -1,9 +1,8 @@
 import { lazy, Suspense } from 'react';
-
 import { Loader } from './components/Loader';
-import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { PrivateRoute } from './components/PrivateRoute';
+import './App.css';
 
 const DefaultLayout = lazy(() => import('./layout/DefaultLayout'));
 

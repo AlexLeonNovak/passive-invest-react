@@ -1,5 +1,7 @@
 import { PrimeIcons } from 'primereact/api';
 import { Button } from 'primereact/button';
+import { Link } from 'react-router-dom';
+import { ThemeSwitcher } from '../components/ThemeSwitcher';
 
 const AppHeader = () => {
   // const dispatch = useDispatch()
@@ -7,12 +9,13 @@ const AppHeader = () => {
 
   return (
     <div className="header flex flex-row mb-4">
-      <div className="logo">Passive invest</div>
-      <Button className="btn-header p-link">
-        <i className={PrimeIcons.BARS} />
-      </Button>
+      <div className="logo">
+        <Link to="/">Passive invest</Link>
+      </div>
+      <Button icon={PrimeIcons.BARS} className="m-2 p-button-rounded p-button-secondary p-button-outlined" />
       <ul className="right-menu">
-        <i className={PrimeIcons.USER} />
+        <ThemeSwitcher />
+        <Button icon={PrimeIcons.USER} className="m-2 p-button-rounded p-button-secondary p-button-outlined" />
       </ul>
     </div>
   );

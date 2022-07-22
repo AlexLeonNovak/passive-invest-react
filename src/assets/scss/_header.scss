@@ -39,9 +39,12 @@
   }
   .logo {
     display: flex;
-    width: calc(300px - 2rem);
     align-items: center;
-    font-size: 2em;
+
+    a {
+      font-size: 2em;
+      color: var(--text-color-secondary);
+    }
   }
 
   .right-menu {

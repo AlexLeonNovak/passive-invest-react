@@ -17,7 +17,7 @@ const AppBreadcrumb = () => {
     const breadcrumbs: MenuItem[] = [];
     location.split('/').reduce((prev, curr, index, array) => {
       const currentPathname = `${prev}/${curr}`;
-      const routeName = getRouteName(currentPathname, routes);
+      const routeName = getRouteName(currentPathname, Object.values(routes));
       routeName &&
         breadcrumbs.push({
           command: () => navigate(currentPathname),
