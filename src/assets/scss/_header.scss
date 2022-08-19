@@ -47,6 +47,19 @@
     }
   }
 
+  .left-menu {
+    margin-left: 0.5em;
+    list-style: none;
+
+    .left-menu-item a {
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
   .right-menu {
     margin: 0 0 0 auto;
     padding: 0;

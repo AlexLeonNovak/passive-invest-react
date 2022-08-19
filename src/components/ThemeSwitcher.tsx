@@ -1,6 +1,7 @@
+import { useLayoutEffect, useState } from 'react';
 import { Button } from 'primereact/button';
 import { PrimeIcons } from 'primereact/api';
-import { useLayoutEffect, useState } from 'react';
+import classNames from 'classnames';
 import { usePersistentContent } from '../hooks/usePersistentContent';
 import { PersistentEnum } from '../core/enums/persistent.enum';
 
@@ -24,7 +25,10 @@ export const ThemeSwitcher = () => {
   return (
     <Button
       icon={icon}
-      className="m-2 p-button-rounded p-button-secondary"
+      className={classNames('m-2 p-button-rounded', {
+        'p-button-primary': theme === THEME_DARK,
+        'p-button-secondary': theme === THEME_LIGHT,
+      })}
       onClick={switchTheme}
       aria-label="Switch theme"
     />

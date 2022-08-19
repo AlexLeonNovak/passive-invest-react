@@ -4,6 +4,8 @@ import { LazyExoticComponent } from 'react';
 
 export enum RouteList {
   HOME,
+  BRIEFCASES,
+  BRIEFCASE_CREATE,
 }
 
 export interface Route {
@@ -20,18 +22,15 @@ export type Routes = {
 
 const Home = lazy(() => import('./pages/Home'));
 // const Login = lazy(() => import('./pages/Login'));
-// const ProductList = lazy(() => import('./pages/products/ProductList'));
-// const ProductCreate = lazy(() => import('./pages/products/ProductCreate'));
-// const Categories = lazy(() => import('./pages/categories/Categories'));
-// const CategoryCreate = lazy(() => import('./pages/categories/CategoryCreate'));
-// const CategoryView = lazy(() => import('./pages/categories/CategoryView'));
-// const CategoryUpdate = lazy(() => import('./pages/categories/CategoryUpdate'));
-// const Shops = lazy(() => import('./pages/shops/Shops'));
-// const ShopAddresses = lazy(() => import('./pages/shop-addresses/ShopAddresses'));
+const Briefcases = lazy(() => import('./pages/briefcases/Briefcases'));
+const CreateBriefcase = lazy(() => import('./pages/briefcases/CreateBriefcase'));
 
 const routes: Routes = {
   // { path: RouteList.LOGIN, name: 'Login', element: Login },
   [RouteList.HOME]: { path: '/', name: 'Home', element: Home },
+  //Briefcases
+  [RouteList.BRIEFCASES]: { path: '/briefcases', name: 'Briefcases', element: Briefcases },
+  [RouteList.BRIEFCASE_CREATE]: { path: '/briefcases/create', name: 'Create briefcase', element: CreateBriefcase },
   // //Products
   // { path: RouteList.PRODUCTS, name: 'Products', element: ProductList },
   // { path: RouteList.PRODUCT_CREATE, name: 'Create product', element: ProductCreate },
